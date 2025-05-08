@@ -40,10 +40,16 @@ ul {
   padding: 10px;
   border-radius: 10px;
   border: none;
+  transition: transform 0.3s ease;
 
 }
 
 .btn:hover {
   color: black;
   background-color: #FFC107;
+}
+
+.btn.active {
+  background-color: #ffd700;
+  color: #000;
 }

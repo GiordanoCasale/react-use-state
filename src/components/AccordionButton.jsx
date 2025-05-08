@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const languages = [
     {
@@ -35,7 +35,7 @@ const languages = [
 
 const AccordionButton = ({ setActiveLanguage }) => {
 
-
+    const [activeId, setActiveId] = useState(null);
 
     return (
         <div>
@@ -43,7 +43,11 @@ const AccordionButton = ({ setActiveLanguage }) => {
                 <ul>
                     {languages.map((language) => (
                         <li key={language.id}>
-                            <button className='btn' onClick={() => setActiveLanguage(language)}>
+                            <button className={`btn ${activeId === language.id ? 'active' : ''}`}
+                                onClick={() => {
+                                    setActiveLanguage(language);
+                                    setActiveId(language.id);
+                                }}>
                                 {language.title}
                             </button>
                         </li>
